@@ -1,0 +1,55 @@
+@page
+@model AllCodesModel
+@{
+  ViewData["Title"] = "All Crimes By Area Code";
+}
+
+<h2>All Crimes</h2>  
+
+
+<table class="table">  
+    <thead>  
+        <tr>  
+             
+            <th>  
+                IUCR
+            </th>  
+            <th>  
+                NumofCrimes 
+            </th>  
+            <th>  
+                PrimaryDesc
+            </th>  
+            <th>  
+                SecondaryDesc
+            </th>
+           
+        </tr>  
+    </thead>  
+    <tbody>  
+				
+				
+        @foreach (var item in Model.CrimeList)  
+        {  
+            <tr>  
+                
+                <td>  
+                    @item.crimeID
+                </td>  
+                <td>  
+                    @item.numofCrimes
+                </td>  
+                <td>  
+                    @item.Primarydesc
+                </td> 
+                <td>  
+                    @item.Secondarydesc
+                </td> 
+               
+                
+            </tr>  
+						
+						
+        }  
+    </tbody>  
+</table> 

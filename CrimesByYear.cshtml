@@ -1,0 +1,45 @@
+@page
+@model CrimesByYearModel
+@{
+  ViewData["Title"] = "Total Number of Crimes By Year";
+}
+
+<h2>All Crime Data By Year</h2>  
+
+
+<table class="table">  
+    <thead>  
+        <tr>  
+          
+            <th>  
+                Year
+            </th>  
+            <th>  
+                NumofCrimes
+            </th>  
+            
+           
+        </tr>  
+    </thead>  
+    <tbody>  
+				
+				
+        @foreach (var item in Model.CrimeList)  
+        {  
+            <tr>  
+                 
+                <td>  
+                    @item.Year
+                </td>  
+                <td>  
+                    @item.numofCrimes
+                </td>  
+               
+               
+                
+            </tr>  
+						
+						
+        }  
+    </tbody>  
+</table> 
