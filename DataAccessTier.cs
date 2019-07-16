@@ -17,7 +17,7 @@ namespace DataAccessTier
     // Fields:
     //
     private static string connectionInfo = String.Format(@"
-Server=tcp:jhummel2.database.windows.net,1433;Initial Catalog=ChicagoCrimes;
+Server=tcp:jhummel2.database.windows.net,1433;Initial Catalog=Netflix;
 Persist Security Info=False;User ID=student;Password=cs341!uic;
 MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;
 Connection Timeout=30;

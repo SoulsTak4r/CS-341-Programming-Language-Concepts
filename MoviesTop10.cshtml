@@ -1,0 +1,70 @@
+@page
+@model MoviesTop10Model
+@{
+  ViewData["Title"] = "Top-10 Movies";
+}
+
+<h2>Top-10 Movies</h2>  
+
+@{
+   if (@Model.EX != null)
+	 {
+	   <br />
+		 <br />
+		 <h3>**ERROR: @Model.EX.Message</h3>
+		 <br />
+		 <hr />
+		 <br />
+		 <br />
+	 }
+}
+
+<table class="table">  
+    <thead>  
+        <tr>  
+            <th>  
+                Rank
+            </th>  
+            <th>  
+                MovieID
+            </th>  
+            <th>  
+                NumReviews 
+            </th>  
+            <th>  
+                AvgRating
+            </th>  
+            <th>  
+                MovieName
+            </th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+				@{
+				   int rank = 1;
+				 }
+				
+        @foreach (var item in Model.MovieList)  
+        {  
+            <tr>  
+                <td>  
+										@rank
+                </td>  
+                <td>  
+                    @item.MovieID
+                </td>  
+                <td>  
+                    @item.NumReviews
+                </td>  
+                <td>  
+                    @item.AvgRating
+                </td>  
+                <td>  
+                    @item.MovieName
+                </td>  
+            </tr>  
+						
+						rank++;
+        }  
+    </tbody>  
+</table> 

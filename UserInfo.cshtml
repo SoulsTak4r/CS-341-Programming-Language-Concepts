@@ -1,0 +1,70 @@
+@page
+@model UserInfoModel
+@{
+  ViewData["Title"] = "User Information";
+}
+
+<h2>User Information</h2>  
+
+<br />
+Your search string: "@Model.Input"
+<br />
+# of users found: @Model.NumUsers
+<br />
+<br />
+@{
+   if (@Model.EX != null)
+	 {
+		 <h3>**ERROR: @Model.EX.Message</h3>
+		 <br />
+		 <hr />
+		 <br />
+		 <br />
+	 }
+}
+
+<table class="table">  
+    <thead>  
+        <tr>   
+            <th>  
+                ID
+            </th>  
+						<th>  
+                Name
+            </th>  
+		        <th>  
+                Occupation 
+            </th>  
+            <th>  
+                AvgRating
+            </th>  
+            <th>  
+                NumReviews 
+            </th>  
+
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model.UserList)  
+        {  
+            <tr>  
+                <td>  
+										@item.UserID
+                </td>  
+                <td>  
+                    @item.UserName
+                </td> 
+								<td>  
+                    @item.Occupation
+                </td> 
+								<td>  
+                    @item.AvgRating
+                </td>  
+                <td>  
+                    @item.NumReviews
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table> 
+
