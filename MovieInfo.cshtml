@@ -1,0 +1,70 @@
+@page
+@model MovieInfoModel
+@{
+  ViewData["Title"] = "Movie Information";
+}
+
+<h2>Movie Information</h2>  
+
+<br />
+Your search string: "@Model.Input"
+<br />
+# of movies found: @Model.NumMovies
+<br />
+<br />
+@{
+   if (@Model.EX != null)
+	 {
+		 <h3>**ERROR: @Model.EX.Message</h3>
+		 <br />
+		 <hr />
+		 <br />
+		 <br />
+	 }
+}
+
+<table class="table">  
+    <thead>  
+        <tr>   
+            <th>  
+                ID
+            </th>  
+						<th>  
+                Name
+            </th>  
+		        <th>  
+                Year 
+            </th>  
+            <th>  
+                NumReviews
+            </th>  
+            <th>  
+                AvgRating 
+            </th>  
+
+        </tr>  
+    </thead>  
+    <tbody>  
+        @foreach (var item in Model.MovieList)  
+        {  
+            <tr>  
+                <td>  
+										@item.MovieID
+                </td>  
+                <td>  
+                    @item.MovieName
+                </td> 
+								<td>  
+                    @item.MovieYear
+                </td> 
+								<td>  
+                    @item.NumReviews
+                </td>  
+                <td>  
+                    @item.AvgRating
+                </td>  
+            </tr>  
+        }  
+    </tbody>  
+</table> 
+
